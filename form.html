@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<link rel="stylesheet" type="text/css" href="demo.css">
+<script type="text/javascript">
+
+function remove()
+{
+
+	document.getElementById('result').innerHTML = " ";
+	return false;
+}
+
+function remove1()
+{
+
+	document.getElementById('result1').innerHTML = " ";
+	return false;
+}
+
+function remove2()
+{
+
+	document.getElementById('result2').innerHTML = " ";
+	return false;
+}
+
+function remove3()
+{
+
+	document.getElementById('result3').innerHTML = " ";
+	return false;
+}
+
+function remove4()
+{
+
+	document.getElementById('result4').innerHTML = " ";
+	return false;
+}
+
+function remove5()
+{
+
+	document.getElementById('result5').innerHTML = " ";
+	return false;
+}
+
+function remove6()
+{
+
+	document.getElementById('result6').innerHTML = " ";
+	return false;
+}
+
+
+
+
+
+function validation()
+{
+	var firstName = document.getElementById("1").value;
+	var lastName = document.getElementById("2").value;
+	var emailAddress = document.getElementById("3").value;
+	var password = document.getElementById("4").value;
+	var RePass = document.getElementById("5").value;
+	var contact = document.getElementById("6").value;
+	var country = document.getElementById("7").value;
+
+
+if (firstName.length<1) {
+	document.getElementById('result').innerHTML = "Kindly fill this field";
+	return false;
+}
+
+
+
+if (!isNaN(firstName)) {
+	document.getElementById('result').innerHTML = "Only alphabets are allow";
+	return false;
+}
+
+if ( firstName.length>=20) {
+	document.getElementById('result').innerHTML = "Maximum twenty digits are allowed";
+	return false;
+}
+
+if (!isNaN(firstName)) {
+	document.getElementById('result1').innerHTML = "Only alphabets are allow";
+	return false;
+}
+
+if (lastName.length<1) {
+	document.getElementById('result1').innerHTML = "Kindly fill this field";
+	return false;
+}
+
+if (lastName.length>=20) {
+	document.getElementById('result').innerHTML = "Maximum twenty digits are allowed";
+	return false;
+}
+
+
+
+if (emailAddress.length<1) {
+	document.getElementById('result2').innerHTML = "Kindly fill this field";
+	return false;
+}
+
+
+	if(emailAddress.indexOf('@')<=0)
+	{
+	document.getElementById('result2').innerHTML = "Kindly enter proper email Address";
+	return false;
+	}
+	 
+	 if((emailAddress.charAt(emailAddress.length-4) != '.') && (emailAddress.charAt(emailAddress.length-3) != '.'))
+	 	 {
+
+	 document.getElementById('result2').innerHTML = "Kindly enter proper email Address";
+	return false;	
+	 }
+
+
+if (password.length<1) {
+	document.getElementById('result3').innerHTML = "Kindly fill this field";
+	return false;
+}
+
+if (password.length<=5 && password.length>=20) {
+	document.getElementById('result3').innerHTML = "Kindly set your password in range of 5 to 20";
+	return false;
+}
+
+if (RePass.length<=5 && RePass.length>=20) {
+	document.getElementById('result3').innerHTML = "Kindly set your password in range of 5 to 20";
+	return false;
+}
+
+
+if (RePass.length<1) {
+	document.getElementById('result4').innerHTML = "Kindly fill this field";
+	return false;}
+
+
+
+if (password != RePass) {
+
+	document.getElementById('result4').innerHTML = "Password is not matching";
+	return false;
+	
+}
+
+if (password == RePass) {
+
+	document.getElementById('result4').innerHTML = "Password Confirmed";
+	return false;
+	
+}
+
+if (isNaN(contact.length)) {
+	document.getElementById('result5').innerHTML = "Kindly fill only digit";
+	return false;
+}
+
+
+if (contact.length<1) {
+	document.getElementById('result5').innerHTML = "Kindly fill this field";
+	return false;
+}
+
+if (country.length<1) {
+	document.getElementById('result6').innerHTML = "Kindly fill this field";
+	return false;
+}
+
+if (!isNaN(country.length)) {
+	document.getElementById('result6').innerHTML = "Kindly fill only alphabets";
+	return false;
+}
+
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+<h1>User Sign Up Form</h1>
+
+<form class="form-group" onsubmit="return validation();">
+
+<label for="1">First Name:</label>
+<input type="text" name="firstName" id="1" class="form-control" id="1" value="" placeholder="Enter your first name here..." onfocus="remove();">	
+<span id="result" style="color:red; font-weight: weight;"></span>
+<br>
+
+<label for="2">Last Name:</label>
+<input type="text" name="firstName" id="2" class="form-control" value="" placeholder="Enter your second name here..." onfocus="remove1();">
+<span id="result1" style="color:red; font-weight: weight;"></span>
+	<br>
+
+<label for="3">Email Address:</label>
+<input type="text" name="firstName" id="3" class="form-control"  value="" placeholder="Enter your Email here..." onfocus="remove2();">
+<span id="result2" style="color:red; font-weight: weight;"></span>
+	<br>
+
+<label for="4">Password:</label>
+<input type="text" name="firstName" id="4" class="form-control" value="" placeholder="Enter your Password here..." onfocus="remove3();">
+<span id="result3" style="color:red; font-weight: weight;"></span>
+	<br>
+
+<label for="5">Reconfirm Password:</label>
+<input type="text" name="firstName" id="5" class="form-control" value="" placeholder="Reconfirm your Password..."  onfocus="remove4();">
+<span id="result4" style="color:red; font-weight: weight;"></span>
+	<br>
+ 
+<label for="6">Contact Number:</label>
+<input type="text" name="firstName" id="6" class="form-control" value="" placeholder="Enter your number here..." onfocus="remove5();">
+<span id="result5" style="color:red; font-weight: weight;"></span>
+	<br>
+
+<label for="7">Country Name:</label>
+<input type="text" name="firstName" id="7" class="form-control" value="" placeholder="Enter your country name here..." onfocus="remove6();">
+<span id="result6" style="color:red; font-weight: weight;"></span>
+	<br>
+
+
+<input class="btn btn-primary btn-block" type="submit" value="SUbmit">
+
+
+</form>
+
+
+
+</body>
+</html> 
